@@ -14,19 +14,19 @@ mapdata(Highcharts);
 export class OutputGraphComponent implements OnInit {
   title = "app";
 
-  chart : any;
-  Highcharts = Highcharts;
+  chart: any;
+  Highcharts: any = Highcharts;
   chartConstructor: string = "mapChart";
-  chartOptions;
+  chartOptions: any;
 
   constructor() {
    
     //length of json file
-    let len = Report.length;
-    let obj = Report[len - 1];
+    const len = Report.length;
+    const obj = Report[len - 1];
 
     // maping of country name to country code
-    let isoCountries = {
+    const isoCountries = {
       'Afghanistan': 'af',
       'Aland Islands': 'ax',
       'Albania': 'al',
@@ -129,7 +129,7 @@ export class OutputGraphComponent implements OnInit {
       'Iceland': 'is',
       'India': 'in',
       'Indonesia': 'id',
-      'Iran, Islamic Republic Of': 'ir',
+      'Iran': 'ir',
       'Iraq': 'iq',
       'Ireland': 'ie',
       'Isle Of Man': 'im',
@@ -315,7 +315,7 @@ export class OutputGraphComponent implements OnInit {
         min: 0
       },
       series: [{
-        name: 'Random data',
+        name: 'Confirmed Cases',
         states: {
           hover: {
             color: '#BADA55'
