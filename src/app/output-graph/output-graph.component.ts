@@ -14,7 +14,6 @@ mapdata(Highcharts);
 export class OutputGraphComponent implements OnInit {
   title = "app";
 
-  countryArray;
   chart;
   updateFromInput = false;
   Highcharts = Highcharts;
@@ -298,13 +297,11 @@ export class OutputGraphComponent implements OnInit {
     /**
      * convert object elements to array
      */
-    let result = Object.keys(obj).map((key) => {
+    let countryArray = Object.keys(obj).map((key) => {
       return [getCountryCode(key), Number(obj[key])];
     });
 
-    this.countryArray = result;
-
-    this.countryArray.splice(0, 2);
+    countryArray.splice(0, 2);
     // console.log('this.countryArray', this.countryArray);
 
     this.chartOptions = {
@@ -335,7 +332,7 @@ export class OutputGraphComponent implements OnInit {
           format: '{point.name}'
         },
         allAreas: true,
-        data: this.countryArray
+        data: countryArray
       }]
     };
 
