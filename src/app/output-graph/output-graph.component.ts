@@ -14,19 +14,13 @@ mapdata(Highcharts);
 export class OutputGraphComponent implements OnInit {
   title = "app";
 
-  chart;
-  updateFromInput = false;
+  chart : any;
   Highcharts = Highcharts;
-  chartConstructor = "mapChart";
-  chartCallback;
+  chartConstructor: string = "mapChart";
   chartOptions;
 
   constructor() {
-    const self = this;
-    this.chartCallback = chart => {
-      self.chart = chart;
-    };
-
+   
     //length of json file
     let len = Report.length;
     let obj = Report[len - 1];
